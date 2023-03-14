@@ -10,7 +10,6 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
 import co.aospa.launcher.ParanoidLauncher;
 import co.aospa.launcher.ParanoidLauncherModelDelegate;
@@ -82,7 +81,7 @@ public class SmartspaceViewContainer extends FrameLayout implements PluginListen
 
     @Override
     public void setPadding(int left, int top, int right, int bottom) {
-        CellLayout.LayoutParams lp = (CellLayout.LayoutParams) getLayoutParams();
+        LayoutParams lp = (LayoutParams) getLayoutParams();
         lp.setMargins(left, top, right, bottom);
         setLayoutParams(lp);
     }

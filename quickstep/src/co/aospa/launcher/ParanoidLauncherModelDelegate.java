@@ -128,7 +128,8 @@ public class ParanoidLauncherModelDelegate extends QuickstepModelDelegate
         mApp.getModel().enqueueModelUpdateTask(new BaseModelUpdateTask() {
             @Override
             public void execute(LauncherAppState app, BgDataModel dataModel, AllAppsList apps) {
-                BgDataModel.FixedContainerItems container = new BgDataModel.FixedContainerItems(-110);
+                List<ItemInfo> items = new ArrayList<>(mSmartspaceTargets.size());
+                BgDataModel.FixedContainerItems container = new BgDataModel.FixedContainerItems(-110, items);
                 for (SmartspaceTarget target : list) {
                     SmartspaceItem item = new SmartspaceItem();
                     item.setSmartspaceTarget(target);
